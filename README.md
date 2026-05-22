@@ -52,6 +52,31 @@ The GCS, SBP, and Temperature columns were cleaned by first converting all value
 **Outcome:** A realistic Pulse distribution with no missing values and minimal outliers.
 
 ---
+## Assignment 3: Clinical Data Visualisation  
+### Overview
+
+This task focused on creating meaningful visualisations from the cleaned Emergency Triage dataset using Python and Matplotlib in Google Colab. The goal was to explore clinically relevant patterns in patient vital signs and better understand distributions and relationships within the data.
+
+### Tasks
+
+This assignment focused on creating clinically meaningful visualisations from the cleaned Emergency Triage dataset using Python and Matplotlib in Google Colab. A histogram was used to examine the distribution of patient pulse rates and identify whether most values fell within normal or abnormal clinical ranges, with reference zones added for low (<60 bpm) and high (>100 bpm) pulse rates. A scatter plot was also created to explore the relationship between patient age and respiratory rate (RR), with reference lines showing the normal adult respiratory rate range (12–20 bpm). These visualisations helped highlight patterns, identify abnormal observations, and improve interpretation of the clinical data.
+
+A scatter plot was also created to explore the relationship between patient age and respiratory rate (RR), helping assess whether respiratory rate patterns varied across different age groups in emergency department patients. Horizontal reference lines were added to indicate the typical adult respiratory rate range (12–20 breaths per minute), providing clinical context for identifying potentially abnormal observations. These visualisations helped transform cleaned data into interpretable insights suitable for clinical analysis.
+
+**Process:**  
+1. Selected clinically relevant variables from the cleaned dataset  
+2. Created a histogram to visualise the distribution of Pulse values  
+3. Added clinical reference zones and threshold lines for abnormal pulse ranges (<60 bpm and >100 bpm)  
+4. Created a scatter plot to analyse the relationship between Age and Respiratory Rate (RR)  
+5. Added clinical reference lines for normal respiratory rate values (12–20 bpm)  
+6. Labelled axes, titles, and legends clearly to improve readability and interpretation  
+7. Saved the generated plots as PNG image files for reporting and presentation purposes  
+
+**Outcome:** Clear clinical visualisations showing pulse distribution patterns and the relationship between age and respiratory rate, with clinically meaningful annotations to support interpretation.
+
+---
+---
+
  
 ## Prerequisites
  
