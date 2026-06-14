@@ -1,15 +1,41 @@
-# CariSurg MedTech Pathways — Week 0 
-## Setup Instructions
- 
-### Method 1: Direct GitHub Integration (Recommended)
- 
-1. **Open Google Colab**
-   - Navigate to [colab.research.google.com](https://colab.research.google.com)
-2. **Load Notebook from GitHub**
-   - Click **File → Open Notebook**
-   - Select the **GitHub** tab
-   - Enter repository URL: `https://github.com/izDeLaMo/CariSurg-MedTech-Week0`
-   - Choose the notebook you want to run (e.g., `01_gender_cleaning.ipynb`)
+# CariSurg MedTech Pathways — Portfolio
+
+A comprehensive data science portfolio demonstrating clinical data cleaning, analysis, and visualization techniques.
+
+## 📋 Project Structure
+
+```
+carisurg-portfolio/
+├── README.md                 # Project overview
+├── LICENSE                   # MIT License
+├── .gitignore               # Git ignore rules
+├── requirements.txt         # Python dependencies
+├── notebooks/
+│   ├── README.md
+│   └── week0_eda.ipynb      # Week 0 EDA notebook
+├── docs/
+│   ├── README.md
+│   ├── week1_memo.pdf       # Week 1 memo
+│   └── week1_proposal.pdf   # Week 1 proposal
+└── data/
+    └── README.md            # Data folder guide
+```
+
+## 🚀 Quick Start
+
+### Option 1: Google Colab
+1. Navigate to [colab.research.google.com](https://colab.research.google.com)
+2. Click **File → Open Notebook**
+3. Select the **GitHub** tab
+4. Enter: `https://github.com/izDeLaMo/carisurg-portfolio`
+5. Select `notebooks/week0_eda.ipynb`
+
+### Option 2: Local Jupyter
+```bash
+pip install -r requirements.txt
+jupyter notebook notebooks/week0_eda.ipynb
+```
+
 ---
 ## Assignment 1: Gender Column Cleaning
 ### Overview
