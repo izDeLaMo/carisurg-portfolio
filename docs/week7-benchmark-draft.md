@@ -16,12 +16,12 @@ ESI Level 1 recall and the interpretability column are still outstanding (see No
 
 ## ESI Level 1 Recall (primary clinical metric — carried over from Week 6)
 
-| Model                 | ESI Level 1 Recall |
-|------------------------|--------------------|
-| Stratified Random      | TBD                |
-| Logistic Regression    | TBD                |
-| Decision Tree          | TBD                |
-| Random Forest          | TBD                |
+| Model                 | ESI Level 1 Recall  |
+|------------------------|---------------------|
+| Stratified Random      | 0.00                |
+| Logistic Regression    | 0.25                |
+| Decision Tree          | 0.00                |
+| Random Forest          | 0.00                |
 
 *(Run the `esi1_table` cell in the notebook — you have everything else, just haven't pasted this back yet.)*
 
