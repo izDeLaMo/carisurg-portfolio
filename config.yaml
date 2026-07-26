@@ -1,0 +1,41 @@
+# config.yaml
+# One decision, one model, one set of hyperparameters.
+# Pinned per the Week 7 cost-benefit memo (docs/model-selection.md, "Week 7 decision journal"):
+# Logistic Regression beat Random Forest on every accuracy/safety metric, at ~1/6 the train
+# cost and ~1/30 the inference cost. Random Forest and Decision Tree are kept in code only
+# as comparison baselines for the model-selection table — they are NOT trained by
+# scripts/train.py by default.
+
+seed: 42
+
+data:
+  path: "data/triage_clean_interim.csv"
+  target_column: "esi"
+  # Columns dropped because they leak the outcome (recorded at/after the triage decision)
+  leak_columns:
+    - "disposition"
+    - "previousdispo"
+  test_size: 0.2
+  stratify: true
+
+model:
+  name: "logistic_regression"      # pinned final model
+  scale_features: true             # Logistic Regression needs scaled features; tree models did not
+  hyperparameters:
+    max_iter: 2000
+    solver: "lbfgs"
+    random_state: 42               # duplicated from top-level seed for clarity in the model constructor
+
+evaluation:
+  metrics:
+    - accuracy
+    - macro_precision
+    - macro_recall
+    - macro_f1
+  critical_class_recall:
+    class_label: 1                 # ESI Level 1 — rarest and most dangerous to miss
+    metric_name: "esi1_recall"
+
+output:
+  results_dir: "docs"
+  results_table: "docs/model-selection.md"
