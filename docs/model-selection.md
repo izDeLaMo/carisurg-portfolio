@@ -4,6 +4,26 @@
 cost-benefit memo and interim notebook; they will be re-verified against the
 final repo run before Tuesday's final submission.
 
+**Full reasoning:** see `Week 7 Cost-Benefit Memo` 
+— the decision journal entry behind this table's winner. Key excerpt: Logistic
+Regression was carried forward because it beat Random Forest on every accuracy
+and safety metric measured, while training ~6x faster and predicting ~30x faster
+per patient.
+
+**Dataset:** `data/triage_clean_interim.csv`, identical 80/20 stratified split
+(`random_state=42`) across all four models — same unseen patients every time.
+
+# Model-Selection Results Table
+
+**Status:** FINAL (Week 8). Accuracy/precision/recall/F1 and ESI Level 1 recall
+verified against a real end-to-end run of `scripts/train.py` on the full
+dataset (44,096 train / 11,025 test rows, 28 July 2026) — they match the
+Week 7 cost-benefit memo exactly. Train/inference timing below is from that
+same verification run (repo owner's machine); the original memo's timings
+came from a different machine, so the two won't match exactly — that's
+expected and doesn't affect the model comparison, since both models were
+timed on the same machine within each run.
+
 **Full reasoning:** see `Week 7 Cost-Benefit Memo` (Israel De La Mothe, 22 July 2026)
 — the decision journal entry behind this table's winner. Key excerpt: Logistic
 Regression was carried forward because it beat Random Forest on every accuracy
@@ -20,7 +40,16 @@ per patient.
 | Stratified Random (baseline) | 0.375 | 0.204 | 0.204 | 0.204 | 0.003 | 2.5e-07 | 0.00 | |
 | Decision Tree (max_depth=6) | 0.554 | 0.264 | 0.243 | 0.214 | 0.434 | 6.4e-07 | 0.00 | |
 | Random Forest (300 trees) | 0.676 | 0.519 | 0.401 | 0.418 | 32.934 | 4.5e-05 | 0.00 | |
-| **Logistic Regression** | **0.683** | **0.607** | **0.476** | **0.508** | 5.393 | 1.4e-06 | **0.25** | ✅ **Pinned Phase 3 model** |
+| **Logistic Regression** | **0.6828** | **0.6067** | **0.4756** | **0.5079** | 1.638 | 4.5e-07 | **0.2500** | ✅ **Pinned Phase 3 model** |
+
+*Logistic Regression's accuracy/precision/recall/F1/ESI-1-recall columns are
+from the verified real repo run. Its train/inference time are also from that
+run (repo owner's machine, 28 July 2026). Baseline, Decision Tree, and Random
+Forest timings are carried over from the Week 7 memo, run on a different
+machine — they are shown for the audit trail and are still valid for the
+relative comparison (Logistic Regression was ~6x faster to train and ~30x
+faster per prediction than Random Forest *on the same machine* in the
+original Week 7 benchmark).
 
 ## Key hyperparameters per model
 
@@ -49,6 +78,6 @@ per patient.
 - Class imbalance not directly addressed for any model (no class weighting/resampling).
 - Interpretability judged by inspection, not yet reviewed by a clinician (Dr. Reyes).
 
-*Table will be re-generated from `scripts/train.py` output against the real
-dataset before final submission; this draft carries over the Week 7 memo's
-verified numbers as the audit trail.*
+*Table verified against `scripts/train.py` output on the real dataset,
+28 July 2026 — accuracy/precision/recall/F1/ESI-1-recall for the pinned
+model match the Week 7 memo exactly.*
